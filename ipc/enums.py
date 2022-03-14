@@ -1,0 +1,20 @@
+from enum import Enum
+from enum import IntEnum
+
+JOINT_ACTUATION_MODE = Enum('JOINT_ACTUATION_MODE', 'POSITION VELOCITY EFFORT')
+contact_enum = {0:'BOTH', 1:'LEFT', 2:'RIGHT',
+                3:'NO CONTACT'}  # TODO: deprecated
+Contact = Enum('Contact', 'BOTH LEFT RIGHT NONE', )  # TODO: refactor to CONTACT
+PLAYER = Enum('PLAYER', 'VREP DXL DXL_DIAGNOSTIC BULLET', )
+SIDE = IntEnum('SIDE', 'LEFT RIGHT')
+CONTROL_MODE = Enum('CONTROL_MODE',
+                    'NORMAL, SWING_FOOT_ORIENTATION, BODY_ORIENTATION')
+MULTIPROC_TRANSPORT = Enum('MULTIPROC_TRANSPORT', 'START STOP PAUSE')
+
+
+class EE_LABEL(IntEnum):
+    LLEG_EE = 0
+    RLEG_EE = 1
+    LLEG_MOCAP = 2
+    RLEG_MOCAP = 3
+    ROBOT_BASE_MOCAP = 4
